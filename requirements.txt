@@ -1,0 +1,6 @@
+django
+sounddevice
+SoundFile
+numpy
+SpeechRecognition
+

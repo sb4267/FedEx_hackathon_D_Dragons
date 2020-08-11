@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<link rel="stylesheet" href="{% static 'sudhu_web_design.css' %}">
+<html lang="en" dir="ltr">
+<div id='btns'>
+      <button  class="btn btn-default" id='start'>Start</button>
+      <button  class="btn btn-default" id='stop'>Stop</button>
+    </div>
+    <div>
+      <ul  class="list-unstyled" id='ul'></ul>
+    </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>
+          'use strict'
+
+          let log = console.log.bind(console),
+            id = val => document.getElementById(val),
+            ul = id('ul'),
+            gUMbtn = id('gUMbtn'),
+            start = id('start'),
+            stop = id('stop'),
+            stream,
+            recorder,
+            counter=1,
+            chunks,
+            media;
+
+              const constraints = {audio: true};
+              const btn = document.createElement('BUTTON');
+              navigator.mediaDevices.getUserMedia(constraints).
+                then(handleSuccess);
+            function handleSuccess(stream) {
+              recorder = new MediaRecorder(stream);
+              recorder.ondataavailable = e => {
+                chunks.push(e.data);
+                if(recorder.state == 'inactive')  makeLink();
+              };
+            }
+            start.onclick = e => {
+              start.disabled = true;
+              stop.removeAttribute('disabled');
+              chunks=[];
+              recorder.start();
+            }
+            stop.onclick = e => {
+              stop.disabled = true;
+              recorder.stop();
+              start.removeAttribute('disabled');
+            }
+
+            function makeLink(){
+              let blob = new Blob(chunks, {type:'audio/ogg' })
+                , url = URL.createObjectURL(blob)
+                , li = document.createElement('li')
+                , mt = document.createElement('audio')
+                , hf = document.createElement('a')
+              ;
+              mt.controls = true;
+
+              hf.href = url;
+              hf.download = 'file1';
+              hf.innerHTML = `donwload ${hf.download}`;
+
+              li.appendChild(hf);
+              ul.appendChild(li);
+            }
+
+
+
+
+
+        </script>
+      </body>
+    </html>
