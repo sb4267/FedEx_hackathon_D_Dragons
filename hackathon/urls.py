@@ -15,8 +15,13 @@ Including another URLconf
 """
 
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
+
 from . import views
 urlpatterns = [
     path('', views.homepage),
-    path('what_did_i_say',views.whatdidisay, name='whatdidisay')
+    path('what_did_i_say',views.whatdidisay, name='whatdidisay'),
+    path('ajax/detect_sound/', views.pre_processor,name='processor'),
 ]
+urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

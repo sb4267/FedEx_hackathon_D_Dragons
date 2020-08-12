@@ -1,0 +1,61 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.4fr 1.6fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas: "Left_banner Left_banner Right_banner Right_banner" "Left Left Right Right" "Left Left Right Right";
+  background-color: black
+}
+
+.Left_banner { grid-area: Left_banner;
+background-color: black
+}
+
+.Right_banner { grid-area: Right_banner;
+background-color: black
+}
+
+.Left {
+  display: grid;
+  grid-template-columns: 0.1fr 1.6fr 1fr;
+  grid-template-rows: 0.1fr 4fr;
+  gap: 0px 0px;
+  grid-template-areas: "LT AI_DEMO AI_DEMO" ". Left_content Left_content";
+  grid-area: Left;
+  background-color: #B0B0B0
+}
+
+.LT { grid-area: LT;
+background-color: #B0B0B0
+}
+
+.AI_DEMO { grid-area: AI_DEMO;
+background-color: #B0B0B0
+}
+
+.Left_content { grid-area: Left_content;
+background-color: #B0B0B0
+}
+
+.Right {
+  display: grid;
+  grid-template-columns: 0.1fr 1.6fr 1fr;
+  grid-template-rows: 0.1fr 4fr;
+  gap: 0px 0px;
+  grid-template-areas: "RT DXC_LOGO DXC_LOGO" ". Right_content Right_content";
+  grid-area: Right;
+  background-color: white
+}
+
+.RT { grid-area: RT;
+background-color: white
+}
+
+.DXC_LOGO { grid-area: DXC_LOGO;
+background-color: white
+
+}
+
+.Right_content { grid-area: Right_content;
+background-color: white
+}

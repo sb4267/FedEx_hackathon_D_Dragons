@@ -21,7 +21,6 @@
             stop = id('stop'),
             stream,
             recorder,
-            counter=1,
             chunks,
             media;
 
@@ -63,6 +62,14 @@
 
               li.appendChild(hf);
               ul.appendChild(li);
+              const audio = new Audio(hf.href);
+              var reader = new FileReader();
+reader.readAsDataURL(blob); 
+reader.onloadend = function() {
+    var base64data = reader.result;
+    console.log(base64data);
+}
+
             }
 
 
