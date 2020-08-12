@@ -60,24 +60,24 @@ def pre_processor(request):
         wav_file = open(string_i_want, "wb")
         decode_string = base64.b64decode(img_st)
         wav_file.write(decode_string)
-        # wav_c_file=str('media/audios/'+date_str+'.wav')
-        # command = str("ffmpeg -i "+string_i_want+" -ac 2 -f wav "+wav_c_file)
-        # subprocess.call(command, shell=True)
-        # r = sr.Recognizer()
-        # harvard = sr.AudioFile(wav_c_file)
-        # s_google=''
-        # with harvard as source:
-        #    audio = r.record(source)
-        # try:
-        #     s_google=r.recognize_google(audio)
-        # except Exception as e:
-        #     s_google=e
-        # # s_google="my_test_text"
-        # data_pics = {}
-        # data_pics['pictures'] = []
-        # data_pics['pictures'].append({'path':str(s_google)})
-        # with open('media/picture.json','w') as outfile:
-        #     json.dump(data_pics, outfile)
+        wav_c_file=str('media/audios/'+date_str+'.wav')
+        command = str("ffmpeg -i "+string_i_want+" -ac 2 -f wav "+wav_c_file)
+        subprocess.call(command, shell=True)
+        r = sr.Recognizer()
+        harvard = sr.AudioFile(wav_c_file)
+        s_google=''
+        with harvard as source:
+           audio = r.record(source)
+        try:
+            s_google=r.recognize_google(audio)
+        except Exception as e:
+            s_google=e
+        # s_google="my_test_text"
+        data_pics = {}
+        data_pics['pictures'] = []
+        data_pics['pictures'].append({'path':str(s_google)})
+        with open('media/picture.json','w') as outfile:
+            json.dump(data_pics, outfile)
         s_google="Hello"
         chat_response=chatbot_response(s_google)
         myobj = gTTS(text=chat_response, lang='en', slow=False)
