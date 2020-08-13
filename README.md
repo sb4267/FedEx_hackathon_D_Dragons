@@ -30,7 +30,7 @@ The app is written using the Django framework. We created two versions of the ap
 
 This app uses the Django framework and it communicates with the two FedEx APIs. We have implemented this as a Python/Django app, running in Heroku. The data pipeline receives real-time voice data from the user, which it converts to text and tokenize the sentences, Lemmatize, create the bag of words, and calculate the similarity of the words in the query, connect to the respective API, get the response and convert back to the voice and sends to the customer.
 
-Architecture_diagram.png
+![alt text](https://github.com/sb4267/FedEx_hackathon_sb4267/blob/master/Architecture_diagram.png)
 <h2>The Data Pipeline</h2>
 
 The data pipeline is written in Python and deployed as a Django app running in Heroku Web App. The data pipeline reads raw text file we created for basic responses and uses python text processing to take voice inputs, conversion of voice to text,  tokenize, Lemmatize, create the bag of words, and calculate the similarity of the words in the query, connect to the respective API, get the response and convert back to the voice.
