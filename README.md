@@ -48,3 +48,11 @@ The data pipeline is written in Python and deployed as a Django app running in H
 
 + PPT Presentation
     + https://github.com/sb4267/FedEx_hackathon_sb4267/blob/master/Documentations/Fedex%20Presentation.pptx
+    
++ Instructions to execute the project
+    install the required packages from requirements.txt
+    in the terminal/command prompt for the home directory where the file manage.py file is present
+    run the following command
+    python manage.py runserver
+    it would show a usual destination file with local host similar to this (http://127.0.0.1:8000/)
+    
