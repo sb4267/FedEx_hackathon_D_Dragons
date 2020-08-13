@@ -10,6 +10,8 @@
 Watch the overview video...
 
 
+[![Watch the video](https://github.com/sb4267/FedEx_hackathon_D_Dragons/blob/master/Documentations/screenshot.png)](https://github.com/sb4267/FedEx_hackathon_D_Dragons/blob/master/Documentations/FedEx%20Hackathon%20Demo_D%20Dragons.mp4)
+
 <h2>Overview</h2>
 
 Many devices we use every day utilize voice assistants. They’re on our smartphones and inside smart speakers in our homes. Many mobile apps and operating systems use them. Additionally, certain technology in cars, as well as in retail, education, healthcare, and telecommunications environments, can be operated by voices.
@@ -24,7 +26,6 @@ Similar to the chat assistant FedEx website already have, we need to deploy the 
 The app is written using the Django framework. We created two versions of the app. One uses Keras, Tensorflow framework and another uses NLTK in python for text processing.
 
 
-[![alt text] (https://github.com/sb4267/FedEx_hackathon_D_Dragons/blob/master/Documentations/screenshot.png)](https://github.com/sb4267/FedEx_hackathon_D_Dragons/blob/master/Documentations/FedEx%20Hackathon%20Demo_D%20Dragons.mp4)
 
 <h2>The Design</h2>
 
