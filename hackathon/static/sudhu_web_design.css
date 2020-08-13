@@ -1,61 +1,47 @@
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 0.4fr 1.6fr 1fr;
-  gap: 0px 0px;
-  grid-template-areas: "Left_banner Left_banner Right_banner Right_banner" "Left Left Right Right" "Left Left Right Right";
-  background-color: black
+  grid-template-rows: 0.5fr 1.5fr 1fr;
+  gap: 1px 1px;
+  grid-template-areas: "Top_area Top_area Top_area Top_area" "Remain_area Remain_area Remain_area Remain_area" "Remain_area Remain_area Remain_area Remain_area";
 }
 
-.Left_banner { grid-area: Left_banner;
-background-color: black
-}
-
-.Right_banner { grid-area: Right_banner;
-background-color: black
-}
-
-.Left {
+.Top_area {
   display: grid;
-  grid-template-columns: 0.1fr 1.6fr 1fr;
-  grid-template-rows: 0.1fr 4fr;
-  gap: 0px 0px;
-  grid-template-areas: "LT AI_DEMO AI_DEMO" ". Left_content Left_content";
-  grid-area: Left;
-  background-color: #B0B0B0
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1.3fr 0.7fr;
+  gap: 1px 1px;
+  grid-template-areas: "Logo_png marquee Right_side" "Wasted_area Wasted_area Wasted_area";
+  grid-area: Top_area;
 }
 
-.LT { grid-area: LT;
-background-color: #B0B0B0
-}
-
-.AI_DEMO { grid-area: AI_DEMO;
-background-color: #B0B0B0
-}
-
-.Left_content { grid-area: Left_content;
-background-color: #B0B0B0
-}
-
-.Right {
+.Right_side {
   display: grid;
-  grid-template-columns: 0.1fr 1.6fr 1fr;
-  grid-template-rows: 0.1fr 4fr;
-  gap: 0px 0px;
-  grid-template-areas: "RT DXC_LOGO DXC_LOGO" ". Right_content Right_content";
-  grid-area: Right;
-  background-color: white
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1px 1px;
+  grid-template-areas: ". about about" ". about about";
+  grid-area: Right_side;
 }
 
-.RT { grid-area: RT;
-background-color: white
+.about { grid-area: about; }
+
+.Logo_png { grid-area: Logo_png; }
+
+.marquee { grid-area: marquee; }
+
+.Wasted_area { grid-area: Wasted_area; }
+
+.Remain_area {
+  display: grid;
+  grid-template-columns: 0.4fr 2.2fr 0.4fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1px 1px;
+  grid-template-areas: ". text_area ." ". text_area .";
+  grid-area: Remain_area;
+
 }
 
-.DXC_LOGO { grid-area: DXC_LOGO;
-background-color: white
-
-}
-
-.Right_content { grid-area: Right_content;
-background-color: white
-}
+.text_area { grid-area: text_area;
+  
+background-color: white}

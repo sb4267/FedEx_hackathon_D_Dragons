@@ -1,11 +1,11 @@
 {"intents": [
         {"tag": "greeting",
-         "patterns": ["Hi there", "How are you", "Is anyone there?","Hey","Hola", "Hello", "Good day"],
-         "responses": ["Hello, I'm the FedEx Virtual Assistant. I'm here to help you with your questions regarding FedEx® services."],
+         "patterns": ["Hi there", "How are you", "Is anyone there?","Hey","Hola", "Hello", "Good day", "Hey FedEx"],
+         "responses": ["Hello, I'm the FedEx Virtual Assistant. I'm here to help you with your questions regarding FedEx services."],
          "context": [""]
         },
         {"tag": "goodbye",
-         "patterns": ["Bye", "See you later", "Goodbye", "Nice chatting to you, bye", "Till next time"],
+         "patterns": ["Bye", "have a good day","See you later", "Goodbye", "Nice chatting to you, bye", "Till next time"],
          "responses": ["See you!", "Have a nice day", "Bye! Come back again soon."],
          "context": [""]
         },
@@ -21,9 +21,9 @@
         },
         {"tag": "tracking",
          "patterns": ["track my package?", "fedex tracking?", "When will my package arrive?", "Package details", "Track my package"],
-         "responses": ["In order for me to assist you with tracking your shipment, I will need your tracking number or door tag number.If you do not have this number, type 'I don't have it'.Please enter your tracking number."],
+         "responses": ["please provide the tracking number"],
          "context": [""]
         }
-        
+
    ]
 }

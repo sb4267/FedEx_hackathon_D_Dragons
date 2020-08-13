@@ -1,0 +1,168 @@
+
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Fedex Hazckathon</title>
+  </head>
+  <body>
+    <uldiv>
+      <ul  class="list-unstyled" id='bot_interface'></ul>
+    </uldiv>
+    <cin id="my_div"><audio id="chime_in"></audio></cin>
+      <cout id="my_div"><audio id="chime_out"></audio></cout>
+<auddel id="aud_del"><img id="img_id"></img></auddel>
+    <div class="Left_content">
+  <siv id="my_div"><audio id="my_audio"></audio></siv>
+</div>
+    <!-- <audio id="myAudio">
+  <source src="{% static 'welcome.mp3' %}" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio> -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>
+        var dura=15000;
+        var user_audio;
+          (function () {
+            var ul = document.getElementById('bot_interface');
+            var li = document.createElement('li');
+            li.appendChild(document.createTextNode("smthng"));
+            ul.appendChild(li);
+            $('siv audio').attr("src", 'media/fedaud/welcome.mp3');
+            $('siv audio').attr("type", 'audio/mp3');
+            $('cin audio').attr("src", 'media/chime_in.mp3');
+            $('cin audio').attr("type", 'audio/mp3');
+            $('cout audio').attr("src", 'media/chime_out.mp3');
+            $('cout audio').attr("type", 'audio/mp3');
+            // document.getElementById("my_audio").play();
+            const constraints = {audio: true};
+            const btn = document.createElement('BUTTON');
+            navigator.mediaDevices.getUserMedia(constraints).
+              then(handleSuccess);
+          function handleSuccess(stream) {
+            var options = {
+              bitsPerSecond : 128000,
+
+            }
+            recorder = new MediaRecorder(stream,options);
+            recorder.ondataavailable = e => {
+              chunks.push(e.data);
+              if(recorder.state == 'inactive')  makeLink();
+
+            };
+
+          navigator.mediaDevices.getUserMedia(constraints).
+            then(setTimeout(btn_click_auto, 12000));
+        }
+
+            function btn_click_auto()
+              {
+                setTimeout(arguments.callee, 12000);
+                chunks=[];
+                j=recorder.state;
+                // console.log(j);
+                btn.id='screenshot-button';
+                if (j!='recording'){
+                  document.getElementById("chime_in").play();
+                li.appendChild(document.createTextNode("listening"));
+                ul.appendChild(li);
+                recorder.start();}
+                // console.log("start")
+                setTimeout(call_btn_fn, 6000);
+              }
+              function call_btn_fn(){
+                // console.log("stopping")
+                document.getElementById("chime_out").play();
+                recorder.stop();
+                // console.log(recorder)
+              }
+              function makeLink(){
+                let blob = new Blob(chunks, {type:'audio/wav; codecs=opus;' })
+                  , url = URL.createObjectURL(blob)
+                  , li = document.createElement('li')
+                  , mt = document.createElement('audio')
+                  , hf = document.createElement('a')
+                ;
+                mt.controls = true;
+                // console.log(url)
+                hf.href = url;
+                hf.download = 'file1';
+                var reader = new FileReader();
+                reader.readAsDataURL(blob);
+                reader.onloadend = function() {
+                var base64data = reader.result.replace(/^data:.+;base64,/, '');
+                btn.onclick=new_fn_button(base64data)
+                }
+
+              }
+              function new_fn_button(base64data)
+            {
+              $.ajax({
+
+                    url: 'ajax/detect_sound/',
+                    type: "POST",
+                    data: {
+                      'captured_rec': base64data
+                    },
+                    success : function(json) {
+                      post_img_fn();
+
+                        },
+                        error : function(xhr,errmsg,err) {
+                        }
+                  });
+
+}
+              function post_img_fn()
+                {
+                  li = document.createElement('li')
+
+                  var img_re=$.ajax({
+                    url: 'media/picture.json',
+                    type: "GET",
+                    datatype:'JSON'
+                  });
+                  img_re.success(function(data) {
+                  var pics = data;
+                  // console.log(pics.pictures[0].path);
+                  var user_command=pics.pictures[0].path;
+                  console.log(pics.pictures[0].resp_txt)
+                  var respons_aud= pics.pictures[0].resp_aud;
+                  var respons_txt= pics.pictures[0].resp_txt;
+
+
+                  // li.appendChild("hey");
+                  // ul.appendChild(li);
+                  // pics.pictures[0].path
+                  $('auddel img').attr("href", respons_aud);
+                  user_audio = respons_aud
+                  console.log(respons_aud)
+
+                  // play_snd_fn(delayer_out);
+                  console.log(user_audio);
+                   $('siv audio').attr("src", user_audio);
+                   document.getElementById("my_audio").play();
+                  });
+
+                  // play_snd_fn(delayer_out);
+            }
+
+
+            })();
+
+
+
+        </script>
+      </body>
+    </html>
+<html><head><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8"><meta name="Robots" content="NOINDEX " /></head><body></body>
+                <script type="text/javascript">
+                 var gearPage = document.getElementById('GearPage');
+                 if(null != gearPage)
+                 {
+                     gearPage.parentNode.removeChild(gearPage);
+                     document.title = "Error";
+                 }
+                 </script>
+                 </html>

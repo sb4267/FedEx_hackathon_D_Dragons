@@ -10,9 +10,9 @@ from keras.models import load_model
 model = load_model('media/chatbot_model.h5')
 import json
 import random
-intents = json.loads(open('intents.json').read())
-words = pickle.load(open('words.pkl','rb'))
-classes = pickle.load(open('classes.pkl','rb'))
+intents = json.loads(open('media/Intents.json').read())
+words = pickle.load(open('media/words.pkl','rb'))
+classes = pickle.load(open('media/classes.pkl','rb'))
 
 
 def clean_up_sentence(sentence):
@@ -56,11 +56,13 @@ def getResponse(ints, intents_json):
     list_of_intents = intents_json['intents']
     for i in list_of_intents:
         if(i['tag']== tag):
+            caught_tag=tag
             result = random.choice(i['responses'])
             break
-    return result
+    return result,caught_tag
 
 def chatbot_response(msg):
     ints = predict_class(msg, model)
-    res = getResponse(ints, intents)
-    return res
+    res , caught_tag = getResponse(ints, intents)
+
+    return caught_tag,res

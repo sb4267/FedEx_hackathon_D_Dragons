@@ -3,10 +3,7 @@ sounddevice
 SoundFile
 numpy
 SpeechRecognition
-pickle
 nltk
-keras==2.3.1
-tensorflow
 gTTS
-
-
+pydub
+playsound

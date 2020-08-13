@@ -23,5 +23,7 @@ urlpatterns = [
     path('', views.homepage),
     path('what_did_i_say',views.whatdidisay, name='whatdidisay'),
     path('ajax/detect_sound/', views.pre_processor,name='processor'),
+    path('ajax/waiter/', views.waiter,name='waiter'),
+
 ]
 urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
