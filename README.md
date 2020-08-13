@@ -24,7 +24,7 @@ Similar to the chat assistant FedEx website already have, we need to deploy the 
 The app is written using the Django framework. We created two versions of the app. One uses Keras, Tensorflow framework and another uses NLTK in python for text processing.
 
 
-
+![alt text](https://github.com/sb4267/FedEx_hackathon_D_Dragons/blob/master/Documentations/FedEx%20Hackathon%20Demo_D%20Dragons.mp4)
 
 <h2>The Design</h2>
 
@@ -46,5 +46,5 @@ The data pipeline is written in Python and deployed as a Django app running in H
     + checking rates: https://apis-sandbox.fedex.com/rate/v1/rates/quotes
     + Tracking a package: https://apis-sandbox.fedex.com/track/v1/trackingnumbers
 
-+P PT Presentation
++ PPT Presentation
     + https://github.com/sb4267/FedEx_hackathon_sb4267/blob/master/Documentations/Fedex%20Presentation.pptx
