@@ -1,7 +1,7 @@
 {"intents": [
         {"tag": "greeting",
          "patterns": ["Hi there", "How are you", "Is anyone there?","Hey","Hola", "Hello", "Good day", "Hey FedEx"],
-         "responses": ["Hello, I'm the FedEx Virtual Assistant. I'm here to help you with your questions regarding FedEx services."],
+         "responses": ["Hello, I'm the FedEx Voice Assistant. I'm here to help you with your questions regarding FedEx services."],
          "context": [""]
         },
         {"tag": "goodbye",

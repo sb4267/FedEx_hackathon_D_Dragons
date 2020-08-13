@@ -60,9 +60,9 @@ def pre_processor(request):
         date_str=('%s-%02d-%02d-%02d'%(now.date(),now.hour,now.minute,now.second))
         string_i_want=str('media/audios/'+date_str+'.webm')
         _, audio_name = ntpath.split(string_i_want)
-        # for each in os.listdir('media/audios/'):
-        #     if not each == audio_name:
-        #         os.remove('media/audios/'+each)
+        for each in os.listdir('media/audios/'):
+            if not each == audio_name:
+                os.remove('media/audios/'+each)
         wav_file = open(string_i_want, "wb")
         decode_string = base64.b64decode(img_st)
         wav_file.write(decode_string)
@@ -95,26 +95,23 @@ def pre_processor(request):
             return render(request, 'auto_home.html')
         elif new_list =="Tracking":
             track_response=track_shipment(str(s_google))
-            text_speaker("tracked",track_response)
+            text_speaker("tracking number - "+ s_google ,track_response)
             new_list=''
             return render(request, 'auto_home.html')
         elif var_rates=="rates" :
             global query_rate
-            print('=========================================================================================')
-            print(query_rate)
-            print('==========================================================================================')
             if len(query_rate) == 0 and add_postal == False :
-                text_speaker(s_google,'What is the senders postal code')
+                text_speaker(s_google,'What is the senders postal code?')
                 add_postal = True
                 # query_rate.append(s_google)hgjgjh
                 return render(request, 'auto_home.html')
             elif len(query_rate) == 0 and add_postal == True :
-                text_speaker(s_google,'What is the recipient postal code')
+                text_speaker(s_google,'What is the recipient postal code?')
                 # add_postal = True
                 query_rate.append(s_google)
                 return render(request, 'auto_home.html')
             elif len(query_rate) == 1:
-                text_speaker(s_google, 'What is the weight of the package in pounds')
+                text_speaker(s_google, 'What is the weight of the package in pounds?')
                 query_rate.append(s_google)
                 return render(request, 'auto_home.html')
             elif len(query_rate) == 2:
@@ -124,7 +121,7 @@ def pre_processor(request):
             # elif len(query_rate) == 3:
                 rate = check_rates(query_rate[0],query_rate[1],query_rate[2])
                 if type(rate) == float or type(rate) == int:
-                    message_out = "The rate for delivering a " + str(query_rate[2]) + " pounds package from " + str(
+                    message_out = "The rate for delivering a " + str(query_rate[2]) + " pounds package from postal code" + str(
                         query_rate[0]) + " to " + str(query_rate[1]) + " is " + str(rate) + " Dollors"
                 else:
                     message_out = str(rate)
@@ -141,11 +138,6 @@ def pre_processor(request):
                 query_rate = []
                 text_speaker("invalid", "please enter a valid response")
                 return render(request, 'auto_home.html')
-        elif new_list =="Tracking":
-            track_response=track_shipment(str(s_google))
-            text_speaker("tracked",track_response)
-            new_list=''
-            return render(request, 'auto_home.html')
         elif caught_tag=="greeting" :
             text_speaker(s_google,chat_response)
             return render(request, 'auto_home.html')

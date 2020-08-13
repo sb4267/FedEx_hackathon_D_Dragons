@@ -1,11 +1,11 @@
 {"intents": [
         {"tag": "greeting",
-         "patterns": ["Hi there", "How are you", "Is anyone there?","Hey","Hola", "Hello", "Good day"],
-         "responses": ["Hello, I'm the FedEx Virtual Assistant. I'm here to help you with your questions regarding FedEx® services."],
+         "patterns": ["Hi there", "How are you", "Is anyone there?","Hey","Hola", "Hello", "Good day", "Hey FedEx"],
+         "responses": ["I'm the FedEx Voice Assistant. Ask me something.","Do you want to track package?","Do you want to check rates?"],
          "context": [""]
         },
         {"tag": "goodbye",
-         "patterns": ["Bye", "See you later", "Goodbye", "Nice chatting to you, bye", "Till next time"],
+         "patterns": ["Bye", "have a good day","See you later", "Goodbye", "Nice chatting to you, bye", "Till next time"],
          "responses": ["See you!", "Have a nice day", "Bye! Come back again soon."],
          "context": [""]
         },

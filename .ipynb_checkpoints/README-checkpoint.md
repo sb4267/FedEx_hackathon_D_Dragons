@@ -39,7 +39,7 @@ The data pipeline is written in Python and deployed as a Django app running in H
 <h2>Important Links</h2>
 
 + Git Hub: https://github.com/sb4267/FedEx_hackathon_sb4267
-+ Heroku(free tier) web app launched: https://myfed15snd.herokuapp.com/
++ Heroku(free tier) web app launched: https://myfed16snd.herokuapp.com/
 + Azure : https://fedexhackathon.azurewebsites.net/
 
 + Fedex API list

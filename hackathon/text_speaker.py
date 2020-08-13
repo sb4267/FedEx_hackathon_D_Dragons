@@ -13,9 +13,9 @@ def text_speaker(s_google,chat_response):
     date_str=('%s-%02d-%02d-%02d'%(now.date(),now.hour,now.minute,now.second))
     file_name_destination='media/fedaud/'+date_str+'.mp3'
     audio_name = date_str+'.mp3'
-    #for each in os.listdir('media/fedaud/'):
-    #    if each != audio_name:
-    #        os.remove('media/fedaud/'+each)
+    for each in os.listdir('media/fedaud/'):
+       if each != audio_name:
+           os.remove('media/fedaud/'+each)
     myobj = gTTS(text=chat_response, lang='en', slow=False)
     myobj.save(file_name_destination)
     data_pics = {}
