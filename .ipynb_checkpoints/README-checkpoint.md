@@ -42,8 +42,8 @@ The data pipeline is written in Python and deployed as a Django app running in H
 + Heroku(free tier) web app launched: https://myfed15snd.herokuapp.com/
 + Azure : https://fedexhackathon.azurewebsites.net/
 
-+ Fedex API list:
-+ checking rates: https://apis-sandbox.fedex.com/rate/v1/rates/quotes
-+ Tracking a package: https://apis-sandbox.fedex.com/track/v1/trackingnumbers
++ Fedex API list
+    + checking rates: https://apis-sandbox.fedex.com/rate/v1/rates/quotes
+    + Tracking a package: https://apis-sandbox.fedex.com/track/v1/trackingnumbers
 
 
