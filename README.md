@@ -51,9 +51,19 @@ The data pipeline is written in Python and deployed as a Django app running in H
     + https://github.com/sb4267/FedEx_hackathon_sb4267/blob/master/Documentations/Fedex%20Presentation.pptx
     
 + Instructions to execute the project
-    install the required packages from requirements.txt
-    in the terminal/command prompt for the home directory where the file manage.py file is present
-    run the following command
-    python manage.py runserver
-    it would show a usual destination file with local host similar to this (http://127.0.0.1:8000/)
+    + Install the required packages from requirements.txt
+    + In the terminal/command prompt for the home directory where the file manage.py file is present
+    + run the following command
+    + python manage.py runserver
+    + It would show a usual destination file with local host similar to this (http://127.0.0.1:8000/)
     
++ For running in local machine(to convert the blob audio to physical file):
+
+    + Please download FFmpeg Builds which converts the .webm to .wav files.
+    + For windows/macOD Download from https://ffmpeg.zeranoe.com/builds/
+    + Once you have the files downlaoded for windows add the path of the bin folder to your system.
+    + You can check how to add the path here -> https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/
+
++ ADditionally if your local server do not start please install below.
+    + RUN pip install keras==2.4.3
+    + RUN pip install tensorflow==2.3.0
